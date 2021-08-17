@@ -34,5 +34,4 @@ router
 .post(addReaction)
 .delete(removeReaction)
 
-
-    module.exports = router;
+module.exports = router;
