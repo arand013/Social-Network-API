@@ -47,5 +47,23 @@
             })
             .catch(err => res.json(err));
     },
+    // Route will remove a thought from a User
+    removeThought({ params }, res) {
+        Thought.findOneAndDelete({ _id: params.thoughtId })
+            .then(deletedthought => {
+                if (!deletedthought) {
+                    return res.status(404).json({ message: 'No thought with this id!' });
+                }
+                return User.findOneAndUpdate(
+                    { _id: params.username },
+                    { $pull: { thoughts: params.thoughtId } },
+                    { new: true }
+                );
+            })
+            .then(dbUserData => {
+                res.json(dbUserData);
+            })
+            .catch(err => res.json(err));
+    },
   }
 module.exports = ThoughtController
