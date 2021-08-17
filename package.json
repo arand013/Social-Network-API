@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/arand013/Social-Network-API---w-NoSQL/issues"
   },
-  "homepage": "https://github.com/arand013/Social-Network-API---w-NoSQL#readme"
+  "homepage": "https://github.com/arand013/Social-Network-API---w-NoSQL#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7"
+  }
 }
