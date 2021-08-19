@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Social-Network-API---w-NoSQL',
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Social-Network-API',
  {
   useFindAndModify: false,
   useNewUrlParser: true,
