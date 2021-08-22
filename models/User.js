@@ -5,23 +5,16 @@ const UserSchema = new Schema(
     {
         username: {
             type: String,
+            required: 'Please enter a valid username',
             unique: true,
-            required: 'We need to know what to call you, please enter a user name',
             trim: true,
 
         },
         email: {
             type: String,
-            required: 'Please enter a valid email address',
+            required: 'Please enter a valid email',
             unique: true,
-            validate: {
-                validator(validEmail) {
-                  return /^([a-zA-Z0-9_\.-]+)@([\da-z\.-]+)\.([a-z]{2,6})(\.[a-z]{2,6})?$/.test(
-                    validEmail
-                  );
-                },
-                message: "Please enter a valid email address",
-              },
+
         },
         thoughts: [{
             type: Schema.Types.ObjectId,

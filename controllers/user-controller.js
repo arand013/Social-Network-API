@@ -34,7 +34,7 @@ const userController = {
             res.status(400).json(err);
           });
       },
-       createUser({ body }, res) {
+       createUser({ params, body }, res) {
         console.log("BODY OBJECT", body)
         User.create(body)
             .then(dbUserData => res.json(dbUserData))
